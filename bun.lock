@@ -1,0 +1,264 @@
+// Bun lockfile — text JSONC format (Bun 1.1+, lockfileVersion 1).
+// Generated for probe: bun-unpublished-version-probe.
+// Pattern: E1 (unpublished-version).
+//
+// DEPRECATION NOTE:
+//   request@2.88.2 is a DEPRECATED package. The npm registry manifest for this
+//   version carries the following deprecation message:
+//
+//     "request has been deprecated, see https://github.com/request/request/issues/3142"
+//
+//   The package was deprecated on 2020-02-11 and is no longer maintained.
+//   The deprecation flag is present in the registry response (package.json `deprecated` field)
+//   but the tarball and manifest are still accessible — the package was NOT unpublished.
+//   This probe targets the "deprecated-but-still-resolvable" sub-case of the E1 pattern:
+//   the lockfile can be written and Bun would install it successfully, but Mend must handle
+//   the deprecation metadata in its registry manifest response without corrupting the dep tree.
+//
+// PROBE INTENT:
+//   Mend reads each dependency's npm registry manifest to resolve version, integrity, and
+//   vulnerability data. When the manifest includes a `deprecated` field, Mend's parser must:
+//   (a) continue extracting the version, dependencies, and integrity as normal;
+//   (b) NOT silently substitute a nearby non-deprecated version;
+//   (c) NOT drop the entry from the tree entirely;
+//   (d) NOT mark the dep as if it were from a stale local cache.
+//
+// Dependency graph (direct deps of request@2.88.2, resolved under their constraints):
+//   request@2.88.2 (deprecated)
+//     ├── qs@6.5.3
+//     ├── aws4@1.13.2
+//     ├── uuid@3.4.0
+//     ├── extend@3.0.2
+//     ├── caseless@0.12.0
+//     ├── isstream@0.1.2
+//     ├── aws-sign2@0.7.0
+//     ├── form-data@2.3.3
+//     │     ├── asynckit@0.4.0
+//     │     ├── mime-types@2.1.35
+//     │     │     └── mime-db@1.52.0
+//     │     └── combined-stream@1.0.8   (also direct dep of request)
+//     ├── mime-types@2.1.35             (also required by form-data above)
+//     │     └── mime-db@1.52.0
+//     ├── oauth-sign@0.9.0
+//     ├── safe-buffer@5.2.1
+//     ├── tough-cookie@2.5.0
+//     │     ├── psl@1.15.0
+//     │     └── punycode@2.3.1
+//     ├── tunnel-agent@0.6.0
+//     ├── forever-agent@0.6.1
+//     ├── har-validator@5.1.5
+//     │     ├── ajv@6.12.6
+//     │     └── har-schema@2.0.0
+//     ├── is-typedarray@1.0.0
+//     ├── http-signature@1.2.0
+//     │     ├── assert-plus@1.0.0
+//     │     ├── jsprim@2.0.2
+//     │     └── sshpk@1.18.0
+//     ├── combined-stream@1.0.8         (also required by form-data)
+//     ├── performance-now@2.1.0
+//     └── json-stringify-safe@5.0.1
+//
+// Total: 1 direct (request) + 20 direct-of-request + ~10 transitives = ~31 packages
+// (Note: mime-types and combined-stream are shared between request and form-data)
+{
+  "lockfileVersion": 1,
+
+  "workspaces": {
+    "": {
+      "name": "bun-unpublished-version-probe",
+      "dependencies": {
+        // request@2.88.2 is pinned exactly — no caret, no tilde.
+        // This is intentional: the probe asserts the EXACT version recorded in the lockfile.
+        // If Mend's resolver silently resolves to a non-deprecated version (e.g. the closest
+        // non-deprecated semver neighbor), the exact-pin makes the substitution detectable.
+        "request": "2.88.2",
+      },
+    },
+  },
+
+  "packages": {
+
+    // ---- ROOT DEP (deprecated) ----
+    // request@2.88.2 — the entire `request` package was deprecated 2020-02-11.
+    // Registry manifest includes: "deprecated": "request has been deprecated, see https://github.com/request/request/issues/3142"
+    // The package is still resolvable: tarball and manifest are accessible.
+    // Mend MUST report this dep AS-PINNED. Failure modes documented in expected-tree.json warnings[].
+    "request": ["request@2.88.2", {
+      "dependencies": {
+        "qs": "~6.5.2",
+        "aws4": "^1.8.0",
+        "uuid": "^3.3.2",
+        "extend": "~3.0.2",
+        "caseless": "~0.12.0",
+        "isstream": "~0.1.2",
+        "aws-sign2": "~0.7.0",
+        "form-data": "~2.3.2",
+        "mime-types": "~2.1.19",
+        "oauth-sign": "~0.9.0",
+        "safe-buffer": "^5.1.2",
+        "tough-cookie": "~2.5.0",
+        "tunnel-agent": "^0.6.0",
+        "forever-agent": "~0.6.1",
+        "har-validator": "~5.1.3",
+        "is-typedarray": "~1.0.0",
+        "http-signature": "~1.2.0",
+        "combined-stream": "~1.0.6",
+        "performance-now": "^2.1.0",
+        "json-stringify-safe": "~5.0.1",
+      },
+    }, "sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw=="],
+
+    // ---- DIRECT DEPS OF request@2.88.2 ----
+
+    // qs ~6.5.2 → resolves to 6.5.3 (last patch in the 6.5 range)
+    "qs": ["qs@6.5.3", {}, "sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA=="],
+
+    // aws4 ^1.8.0 → resolves to 1.13.2 (current latest 1.x)
+    "aws4": ["aws4@1.13.2", {}, "sha512-lHe62zvbTB5eEABUVi/AwVh0ZKY9rMMDhmm+eeyuuUQbQ3+J+fONVQOZyj+DdrvD4BY33uYniyRJ4UJIaSKAfw=="],
+
+    // uuid ^3.3.2 → resolves to 3.4.0 (latest 3.x; uuid v4+ is a breaking change, ^3 excludes it)
+    "uuid": ["uuid@3.4.0", {}, "sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A=="],
+
+    // extend ~3.0.2 → resolves to 3.0.2 (only patch in the 3.0 range)
+    "extend": ["extend@3.0.2", {}, "sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g=="],
+
+    // caseless ~0.12.0 → resolves to 0.12.0 (only published version)
+    "caseless": ["caseless@0.12.0", {}, "sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw=="],
+
+    // isstream ~0.1.2 → resolves to 0.1.2
+    "isstream": ["isstream@0.1.2", {}, "sha512-Yljz7ffyPbrLpLngrMtZ7NduUgVvi6wG9RJ9IUcyCd59YQ911PBJphODUcbOVbqYfxe1wuYf/LJ8PauMRwsM/g=="],
+
+    // aws-sign2 ~0.7.0 → resolves to 0.7.0
+    "aws-sign2": ["aws-sign2@0.7.0", {}, "sha512-08kcGqnYf/YmjoRhfxyu+CLxBjUtHLXLXX/vUfx9l2LYzG3c1m61nrpyFUZI6zeS+Li/wWMMidD9KgrqtGq3mA=="],
+
+    // form-data ~2.3.2 → resolves to 2.3.3 (last 2.3.x)
+    "form-data": ["form-data@2.3.3", {
+      "dependencies": {
+        "asynckit": "^0.4.0",
+        "mime-types": "^2.1.12",
+        "combined-stream": "^1.0.6",
+      },
+    }, "sha512-1lLKB2Mu3aGP1Q/2eCOx0fNbRMe7XdwktwOruhfqqd0rIJWwN4Dh+E3hrPSlDCXnSR7UtZ1N38rVXm+6+MEhJQ=="],
+
+    // mime-types ~2.1.19 → resolves to 2.1.35 (latest 2.1.x)
+    // Also required by form-data — hoisted here; both references share this single entry.
+    "mime-types": ["mime-types@2.1.35", {
+      "dependencies": {
+        "mime-db": "1.52.0",
+      },
+    }, "sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw=="],
+
+    // oauth-sign ~0.9.0 → resolves to 0.9.0
+    "oauth-sign": ["oauth-sign@0.9.0", {}, "sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ=="],
+
+    // safe-buffer ^5.1.2 → resolves to 5.2.1 (current latest 5.x)
+    "safe-buffer": ["safe-buffer@5.2.1", {}, "sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ=="],
+
+    // tough-cookie ~2.5.0 → resolves to 2.5.0 (only 2.5.x release)
+    "tough-cookie": ["tough-cookie@2.5.0", {
+      "dependencies": {
+        "psl": "^1.1.28",
+        "punycode": "^2.1.1",
+      },
+    }, "sha512-nlLsUzgm1kfLXSXfRZMc1KLAugd4hqJHDTvc2hDIwS3mZAfMEuMbc03SujMF+GEcpaX/qboeycw6iO8JwVv2+g=="],
+
+    // tunnel-agent ^0.6.0 → resolves to 0.6.0
+    "tunnel-agent": ["tunnel-agent@0.6.0", {}, "sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w=="],
+
+    // forever-agent ~0.6.1 → resolves to 0.6.1
+    "forever-agent": ["forever-agent@0.6.1", {}, "sha512-j0KLYPhm6zeac4lz3oJ3o65qvgQCcPubiyotZrXqEaG4hNagNYO8qdlUrX5vwqv9ohqeT/Z3j6+yW067yWWdUw=="],
+
+    // har-validator ~5.1.3 → resolves to 5.1.5
+    "har-validator": ["har-validator@5.1.5", {
+      "dependencies": {
+        "ajv": "^6.12.3",
+        "har-schema": "^2.0.0",
+      },
+    }, "sha512-nmT2T0lljbxdQZfspsno9hgrG3Uir6Ks5afism62poxqBM6sDnMEuPmzTq8XN0OEwqKLLdh1jQI3qyE66Nzb3w=="],
+
+    // is-typedarray ~1.0.0 → resolves to 1.0.0
+    "is-typedarray": ["is-typedarray@1.0.0", {}, "sha512-cyA56iCMHAh5CdzjJIa4aohJyeO1YbwLi3Jc35MmRU6poroFjIGZzUzupGiRPOjgHg9TLu43xbpwXk523fMxKA=="],
+
+    // http-signature ~1.2.0 → resolves to 1.2.0
+    "http-signature": ["http-signature@1.2.0", {
+      "dependencies": {
+        "assert-plus": "^1.0.0",
+        "jsprim": "^1.2.2",
+        "sshpk": "^1.7.0",
+      },
+    }, "sha512-CAbnr6Rz4CYQkLYUtSNXxQPUH2gK8f3iWexVlsnMeD+GjlsQ0Xsy1cOX+mN3dtxYomRy21CiOzU8Uhw6OwncEQ=="],
+
+    // combined-stream ~1.0.6 → resolves to 1.0.8
+    // Shared between request (direct) and form-data (transitive) — hoisted once.
+    "combined-stream": ["combined-stream@1.0.8", {
+      "dependencies": {
+        "delayed-stream": "~1.0.0",
+      },
+    }, "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg=="],
+
+    // performance-now ^2.1.0 → resolves to 2.1.0
+    "performance-now": ["performance-now@2.1.0", {}, "sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow=="],
+
+    // json-stringify-safe ~5.0.1 → resolves to 5.0.1
+    "json-stringify-safe": ["json-stringify-safe@5.0.1", {}, "sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA=="],
+
+    // ---- TRANSITIVES ----
+
+    // mime-db@1.52.0 — required by mime-types@2.1.35
+    "mime-db": ["mime-db@1.52.0", {}, "sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg=="],
+
+    // asynckit@0.4.0 — required by form-data@2.3.3
+    "asynckit": ["asynckit@0.4.0", {}, "sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q=="],
+
+    // psl@1.15.0 — required by tough-cookie@2.5.0 (^1.1.28)
+    "psl": ["psl@1.15.0", {}, "sha512-JZd3gMVBAVQkSs6HdNZo9Sdo0LNcQeMNP3CozBJb3JYC/QUYZTnKxP+f8oWRX4rHP5EurWxqAHTSwUCjlNKa1w=="],
+
+    // punycode@2.3.1 — required by tough-cookie@2.5.0 (^2.1.1)
+    "punycode": ["punycode@2.3.1", {}, "sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg=="],
+
+    // ajv@6.12.6 — required by har-validator@5.1.5
+    "ajv": ["ajv@6.12.6", {
+      "dependencies": {
+        "uri-js": "^4.2.2",
+        "fast-deep-equal": "^3.1.1",
+        "json-schema-traverse": "^0.4.1",
+        "fast-json-stable-stringify": "^2.0.0",
+      },
+    }, "sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g=="],
+
+    // har-schema@2.0.0 — required by har-validator@5.1.5
+    "har-schema": ["har-schema@2.0.0", {}, "sha512-Oqluz6zhGX8cyRaTQlFMPw80bSJVG2x/cFb8ZPhUILGgHka9SsokCCOQgpveePerqidZOrT14ipqfJb7ILcW5Q=="],
+
+    // assert-plus@1.0.0 — required by http-signature@1.2.0
+    "assert-plus": ["assert-plus@1.0.0", {}, "sha512-NfJ4UzBCcQGLDlQq7nHxH+tv3kyZ0hHQqF5BO6J7tNJeP5do1llPr8dZ8zHonfhAu0PHAdMkSo+8o0wxg9lZWw=="],
+
+    // jsprim@2.0.2 — required by http-signature@1.2.0 (^1.2.2 resolved to latest 2.x)
+    "jsprim": ["jsprim@2.0.2", {
+      "dependencies": {
+        "assert-plus": "^1.0.0",
+        "extsprintf": "1.3.0",
+        "json-schema": "0.4.0",
+        "verror": "1.10.0",
+      },
+    }, "sha512-gqXddjPqQ6G40VdnI6T6yObEC+pDNvyP95wdQhkWkg7crHH3km5qP1FsOXEkzEQwnz6gz5qGTn1c2Y52wP3OyQ=="],
+
+    // sshpk@1.18.0 — required by http-signature@1.2.0 (^1.7.0)
+    "sshpk": ["sshpk@1.18.0", {
+      "dependencies": {
+        "asn1": "~0.2.3",
+        "assert-plus": "^1.0.0",
+        "bcrypt-pbkdf": "^1.0.0",
+        "dashdash": "^1.12.0",
+        "ecc-jsbn": "~0.1.1",
+        "getpass": "^0.1.1",
+        "jsbn": "~0.1.0",
+        "safer-buffer": "^2.0.2",
+        "tweetnacl": "~0.14.0",
+      },
+    }, "sha512-2p2KJZTSqQ/I3+HX42EpYOa2l3f8Erv8MWKsy2I9uf4wA7yFIkXRffYdsx86y6z4vHtV8u7g+pPlr8/4ouAxsQ=="],
+
+    // delayed-stream@1.0.0 — required by combined-stream@1.0.8
+    "delayed-stream": ["delayed-stream@1.0.0", {}, "sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ=="],
+
+  },
+}

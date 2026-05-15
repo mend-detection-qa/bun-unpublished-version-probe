@@ -1,0 +1,406 @@
+{
+  "schema_version": "1.0",
+  "pm": "bun",
+  "pm_version_tested": "1.1.30",
+  "source_file": "bun.lock",
+  "generated_at": "2026-05-15T00:00:00+00:00",
+  "root": {
+    "name": "bun-unpublished-version-probe",
+    "version": "0.1.0",
+    "dependencies": [
+      "request"
+    ]
+  },
+  "packages": {
+    "request": {
+      "version": "2.88.2",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "2.88.2",
+      "deprecated": true,
+      "deprecation_message": "request has been deprecated, see https://github.com/request/request/issues/3142",
+      "dependencies": [
+        "qs",
+        "aws4",
+        "uuid",
+        "extend",
+        "caseless",
+        "isstream",
+        "aws-sign2",
+        "form-data",
+        "mime-types",
+        "oauth-sign",
+        "safe-buffer",
+        "tough-cookie",
+        "tunnel-agent",
+        "forever-agent",
+        "har-validator",
+        "is-typedarray",
+        "http-signature",
+        "combined-stream",
+        "performance-now",
+        "json-stringify-safe"
+      ],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "qs": {
+      "version": "6.5.3",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~6.5.2",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "aws4": {
+      "version": "1.13.2",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "^1.8.0",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "uuid": {
+      "version": "3.4.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "^3.3.2",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "extend": {
+      "version": "3.0.2",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~3.0.2",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "caseless": {
+      "version": "0.12.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~0.12.0",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "isstream": {
+      "version": "0.1.2",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~0.1.2",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "aws-sign2": {
+      "version": "0.7.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~0.7.0",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "form-data": {
+      "version": "2.3.3",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~2.3.2",
+      "dependencies": [
+        "asynckit",
+        "mime-types",
+        "combined-stream"
+      ],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "mime-types": {
+      "version": "2.1.35",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~2.1.19",
+      "dependencies": [
+        "mime-db"
+      ],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "oauth-sign": {
+      "version": "0.9.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~0.9.0",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "safe-buffer": {
+      "version": "5.2.1",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "^5.1.2",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "tough-cookie": {
+      "version": "2.5.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~2.5.0",
+      "dependencies": [
+        "psl",
+        "punycode"
+      ],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "tunnel-agent": {
+      "version": "0.6.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "^0.6.0",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "forever-agent": {
+      "version": "0.6.1",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~0.6.1",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "har-validator": {
+      "version": "5.1.5",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~5.1.3",
+      "dependencies": [
+        "ajv",
+        "har-schema"
+      ],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "is-typedarray": {
+      "version": "1.0.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~1.0.0",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "http-signature": {
+      "version": "1.2.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~1.2.0",
+      "dependencies": [
+        "assert-plus",
+        "jsprim",
+        "sshpk"
+      ],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "combined-stream": {
+      "version": "1.0.8",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~1.0.6",
+      "dependencies": [
+        "delayed-stream"
+      ],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "performance-now": {
+      "version": "2.1.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "^2.1.0",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "json-stringify-safe": {
+      "version": "5.0.1",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": "~5.0.1",
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "mime-db": {
+      "version": "1.52.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": null,
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "asynckit": {
+      "version": "0.4.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": null,
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "psl": {
+      "version": "1.15.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": null,
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "punycode": {
+      "version": "2.3.1",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": null,
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "ajv": {
+      "version": "6.12.6",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": null,
+      "dependencies": [
+        "uri-js",
+        "fast-deep-equal",
+        "json-schema-traverse",
+        "fast-json-stable-stringify"
+      ],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "har-schema": {
+      "version": "2.0.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": null,
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "assert-plus": {
+      "version": "1.0.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": null,
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "jsprim": {
+      "version": "2.0.2",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": null,
+      "dependencies": [
+        "assert-plus",
+        "extsprintf",
+        "json-schema",
+        "verror"
+      ],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "sshpk": {
+      "version": "1.18.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": null,
+      "dependencies": [
+        "asn1",
+        "assert-plus",
+        "bcrypt-pbkdf",
+        "dashdash",
+        "ecc-jsbn",
+        "getpass",
+        "jsbn",
+        "safer-buffer",
+        "tweetnacl"
+      ],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    },
+    "delayed-stream": {
+      "version": "1.0.0",
+      "source": "registry",
+      "group": "main",
+      "declared_constraint": null,
+      "dependencies": [],
+      "source_detail": {
+        "registry": "https://registry.npmjs.org"
+      }
+    }
+  },
+  "notes": {
+    "transitive_depth_truncation": "The lockfile includes direct deps of request@2.88.2 and the first transitive level. Deeper transitives (e.g. sshpk's deps: asn1, jsbn, getpass, dashdash, ecc-jsbn, tweetnacl, bcrypt-pbkdf, safer-buffer; jsprim's deps: extsprintf, json-schema, verror; ajv's deps: uri-js, fast-deep-equal, json-schema-traverse, fast-json-stable-stringify) are omitted from both the lockfile and this expected-tree for brevity. A real `bun install` would resolve them. The comparator should check the probe's direct deps and first-level transitives; deeper transitives are documented in warnings[] but not asserted here.",
+    "deprecation_status": "request@2.88.2 is deprecated (not unpublished). The tarball and manifest are accessible from the npm registry. The npm manifest carries `deprecated: 'request has been deprecated, see https://github.com/request/request/issues/3142'`. This is the documented sub-case of E1 (unpublished-version): the lockfile-pinned version is no longer maintained and carries a registry-level deprecation flag.",
+    "exact_pin_rationale": "The constraint is declared as `'2.88.2'` (exact, no operator) rather than `'^2.88.2'` or `'~2.88.2'`. This makes version-substitution detectable: if Mend silently resolves to a higher non-deprecated version, the diff is unambiguous."
+  },
+  "warnings": [
+    "E1 (unpublished-version): request@2.88.2 is DEPRECATED — the npm registry manifest includes a `deprecated` field with message: 'request has been deprecated, see https://github.com/request/request/issues/3142'. The package was deprecated on 2020-02-11. It is NOT unpublished (tarball remains accessible), but the deprecation flag is present in every registry manifest fetch for this version.",
+    "EXPECTED MEND BEHAVIOR: Mend should report request@2.88.2 AS-PINNED in the lockfile. The declared constraint is the exact version '2.88.2'. The deprecation flag is metadata on the registry response — it must not alter the resolved version, drop the dep, or trigger a fallback to a different version.",
+    "FAILURE MODE 1 — version substitution: Mend silently resolves request to a nearby non-deprecated version (e.g. the latest non-deprecated 2.x or some heuristic 'safe' version). Detection: reported version does not match '2.88.2'. This is the most common failure class for deprecated packages.",
+    "FAILURE MODE 2 — dep dropped entirely: Mend treats the `deprecated` flag as a signal to exclude the package from the tree (false negative). Detection: request is absent from the reported dep tree entirely. Any downstream transitives (qs, aws4, uuid, etc.) may also be missing.",
+    "FAILURE MODE 3 — stale cache hit: Mend's registry manifest cache was populated from an earlier non-deprecated manifest snapshot. The cache entry may carry different dependency declarations or a different version resolution. Detection: transitives reported under request do not match the constraint-resolved versions above (e.g. qs@6.5.2 instead of 6.5.3, or form-data@2.3.2 instead of 2.3.3).",
+    "FAILURE MODE 4 — stale vulnerability data: Mend reports vulnerability data derived from the deprecated version's manifest, which may itself be out of date relative to the canonical version history. This is a data-quality failure, not a tree-shape failure. Detection: vulnerability scan findings for request@2.88.2 omit CVEs that were added to the advisory database after the deprecation date.",
+    "FAILURE MODE 5 — deprecation flag as dep-type reclassification: Mend changes the dep group from 'main' to some internal 'deprecated' or 'excluded' category, causing the dep to be omitted from standard vulnerability scanning. Detection: request absent from the vulnerability scan results even though it appears in the dep tree.",
+    "LOCKFILE FORMAT: bun.lock text JSONC (Bun 1.1+, lockfileVersion 1). Mend detection is lockfile-driven only — no install step. If Mend cannot parse bun.lock JSONC (e.g. due to trailing commas or JSONC comment syntax), the entire tree will be empty. This is a parser prerequisite, not an E1-specific failure, but it must be confirmed before asserting on E1 behavior.",
+    "Bun is NOT in the Mend install-tool list. Detection is lockfile-driven only (bun.lock JSONC parsing). scanSettings.versioning cannot pin a Bun toolchain. No .whitesource file is emitted with this probe.",
+    "TRANSITIVE TRUNCATION: The lockfile and this expected-tree include direct deps of request@2.88.2 and the first transitive level. Deeper transitives (sshpk's 9 deps, jsprim's 4 deps, ajv's 4 deps) exist in reality but are omitted from this probe for tractability. A production comparator should use `gte` tolerance for total dep counts.",
+    "PAIRED WITH probe #24 (bun-not-in-install-tool-probe): that probe documents the install-tool limitation independently. This probe exercises E1 behavior assuming the lockfile parser functions correctly.",
+    "REGISTRY EVIDENCE: The deprecation of request can be verified at https://registry.npmjs.org/request/2.88.2 (field `deprecated`) and at https://github.com/request/request/issues/3142 (the upstream retirement announcement from 2020-02-11)."
+  ]
+}

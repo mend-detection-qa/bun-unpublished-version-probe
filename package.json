@@ -1,0 +1,9 @@
+{
+  "name": "bun-unpublished-version-probe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "E1 (unpublished-version): bun.lock references request@2.88.2, a real deprecated npm package. Surfaces Mend behavior when the registry deprecation message is present in the manifest response.",
+  "dependencies": {
+    "request": "2.88.2"
+  }
+}
